@@ -2,6 +2,7 @@ package dev.nomenarav.runnerz;
 
 import dev.nomenarav.runnerz.run.Location;
 import dev.nomenarav.runnerz.run.Run;
+import dev.nomenarav.runnerz.run.RunRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -21,12 +22,13 @@ public class Application {
 		log.info("Something changed!");
 	}
 
-	@Bean
-	CommandLineRunner runner() {
+	/*@Bean
+	CommandLineRunner runner(RunRepository runRepository) {
 		return args -> {
 			Run run = new Run(1, "First run", LocalDateTime.now(), LocalDateTime.now().plus(1, ChronoUnit.HOURS), 5, Location.OUTDOOR);
-			log.info("Run: " + run);
+			runRepository.create(run);
+			//log.info("Run: " + run);
 		};
-	}
+	}*/
 
 }

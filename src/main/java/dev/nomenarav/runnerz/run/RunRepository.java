@@ -40,4 +40,15 @@ public class RunRepository {
 
         Assert.state(updated == 1, "Failed to update run " + run.title());
     }
+
+    public int count(){
+        return jdbcClient.sql("SELECT id FROM RUN")
+                .query()
+                .listOfRows().size();
+    }
+
+
+    public void saveAll(List<Run> runs) {
+        runs.stream().forEach(this::create);
+    }
 }
