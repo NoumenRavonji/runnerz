@@ -31,12 +31,12 @@ public class Application {
 		return factory.createClient(UserHttpClient.class);
 	}
 
-	@Bean
+	/*@Bean
 	CommandLineRunner runner(UserRestClient userRestClient) {
 		return args -> {
 			List<User> users = userRestClient.findAll();
 			System.out.println(users);
 		};
-	}
+	}*/
 
 }
