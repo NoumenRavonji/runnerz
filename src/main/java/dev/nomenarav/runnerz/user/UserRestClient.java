@@ -18,7 +18,7 @@ public class UserRestClient {
 
         this.restClient = builder
                 .baseUrl("https://jsonplaceholder.typicode.com")
-                .requestFactory(jdkClientHttpRequestFactory)
+                //.requestFactory(jdkClientHttpRequestFactory)
                 .build();
 
     }
